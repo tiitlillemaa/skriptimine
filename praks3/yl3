@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+#kaua on arvuti tööl olnud
+
+ 
+
+echo -n "$(hostname) "
+echo -e "$(uptime | awk '{print $1}') $(uptime -p)"
