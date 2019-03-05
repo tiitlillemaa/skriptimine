@@ -1,0 +1,27 @@
+#!/bin/bash
+#
+# Küpsisetort
+
+echo -n "Aluskandiku pikkus "
+read pikkus
+echo -n "Aluskandiku laius "
+read laius
+echo -n "Küpsise pikkus "
+read kpikkus
+echo -n "Küpsise laius "
+read klaius
+echo -n "Kihtide arv "
+read kihid
+echo -n "Küpsiste arv pakkis "
+read kogus
+
+kandik=$(expr "$pikkus" \* "$laius") #kandiku suuruse arvutamine
+kypsis=$(expr "$kpikkus" \* "$klaius") #küpsise suuruse arvutamine
+kypsis2=$(expr "$kandik" / "$kypsis") #küpsiste arv, mis mahub kandikule
+kogus2=$(expr "$kypsis2" \* "$kihid") #arvutab kihtide põhjal palju küpsiseid kulub
+pakk=$(expr "$kogus2" / "$kogus") #arvutab mitu pakki küpsiseid on vaja
+ss=$(expr "$kandik" % "$kypsis") #arvutab jäägi
+
+echo "Kokku on vaja $kogus2 küpsist" #väljastab mitu küpsist ja pakki läheb sul vaja
+echo "Vaja läheb $pakk pakki"
+echo "Kui see nr on suurem kui 0, siis tuleb osta üks lisaks :$ss"
