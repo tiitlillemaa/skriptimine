@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+#Pythagorase teoreem
+
+echo -n "sisesta a külje pikkus"
+read kylga
+echo -n "sisestea b külje pikkus"
+read kylgb
+hypo=$(echo "scale=4;sqrt(($kylga*$kylga)+($kylgb*$kylgb))" | bc)
+echo "$hypo"
