@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#Heroni teoreem
+
+echo -n "sisesta a külje väärtus:"
+read a
+echo -n "sisesta b külje väärtus:"
+read b
+echo -n "sisesta c külje väärtus:"
+read c
+ymber=$(echo "scale=4;($a+$b+$c)/2" | bc)
+vastus=$(echo "scale=4;sqrt($ymber*($ymber-$a)*($ymber-$b)*($ymber-$c))" | bc)
+echo "pindala = $vastus"
