@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+#
+for (( arv=1; arv<11; arv++ )) #alustab arvust 1, lõpetab 11 juures ja liidab ühe juurde
+do
+	jaak=$(( $arv % 2 )) #arv jagatakse kahega ja kontrollitakse jääki
+	if [ $jaak -eq 0 ]; then #kui jääki ei ole siis...
+		summa=$(( $summa + $arv )) # ... liidetakse jäägita arv koos eelmiste karvudega kokku
+	fi
+done
+echo "arvude vahemikus 1 kuni 10 paarisarvude summa on : $summa"
