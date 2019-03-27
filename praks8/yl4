@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+#
+echo -n "Sisesta suvaline algarv: "
+read algarv
+if [ $algarv -eq 0 -o $algarv -eq 1 ]; then
+	echo "$algarv ei ole algarv"
+else
+	jagaja=2
+	jaak=$(( $algarv % $jagaja ))
+	while [ $jaak -ne 0 ]
+	do
+		jagaja=$(( $jagaja + 1))
+		jaak=$(( $algarv % $jagaja ))
+	done
+	if [ $algarv -eq $jagaja ]; then
+		echo "$algarv on algarv"
+	else
+		echo "$algarv ei ole algarv"
+	fi
+fi
