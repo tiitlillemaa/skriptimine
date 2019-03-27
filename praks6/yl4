@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#paarsuse kontrollimine
+exec 2>/dev/null
+jaak=$( expr "$1" % 2 ) #jäägi arvutamine 2-ga jagamisel
+if [ $jaak -eq "0" ] ;		#if lause 
+then 
+echo "Antud arv on paaris"
+elif [ "$1" != "" ] ; then
+echo "Antud arv on paaritu"
+else
+echo "Unustasite sisestada arve käsrureale"
+fi
