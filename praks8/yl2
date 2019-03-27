@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#
+echo -n "Sisesta suvaline täisarv: "
+read taisarv #loeb sisestatud arvu
+summaa=0
+while [ $taisarv -ne 0 ]  #kui täisarv ei võr 0-ga
+do 	
+	jaak=$(( $taisarv % 10 ))	#täisarv jagatakse 10-ga ja leitakse jääk
+	taisarv=$(( $taisarv / 10))	#täisarv jagatakse 10-ga
+	summa=$(( $summa + $jaak ))	#arvutatakse summa kui liidetakse jäägile eelmiste jääkide osad
+done
+echo "Arvu numbrite summa on $summa" 	#trükib arvude summa
