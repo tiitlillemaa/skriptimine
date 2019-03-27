@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#
+echo -n "Sisesta oma vanus: " #vanuse küsimine kasutaja käest
+read vanus 
+if [ $vanus -lt 0 ]; then  #kui sisestatud arv on negatiivne ütleb et sisestasite vale arvu
+	echo "Sisestasite vale arvu"
+elif [ $vanus -le 11 ]; then #kui arv on väiksem või võrdne 11 ütleb et oled laps
+	echo "oled laps"
+elif [ $vanus -le 17 ]; then #kui arv on väiksem või võrdne 17 ütleb et oled nooruk
+	echo "oled nooruk"
+elif [ $vanus -le 63 ]; then #kui arv on väiksem või võrdne 63 ütleb et oled täiskasvanud
+	echo "oled täiskasvanud"
+else 
+	echo "oled seenior"
+fi
