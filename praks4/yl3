@@ -6,7 +6,13 @@ echo -n "Mitu reisjat on grupis?:"
 read reisjad
 echo -n "Mitu kohta on bussis?:"
 read kohad
-bussid=$(expr $reisjad / $kohad) #mitut bussi on vaja
-ylejaanud=$(expr $reisjad % $kohad) #mitu inimest maha jääb
+bussid=$( expr "$reisjad" / "$kohad" ) #mitut bussi on vaja
+ylejaanud=$( expr "$reisjad" % "$kohad" ) #mitu inimest maha jääb
 
-echo "Täis busse on $bussid ning maha jääb $ylejaanud inimest."
+if test "$ylejaanud"=$( expr "$reisjad" ½ "$kohad" )
+
+then					#lisab ühe bussi juurde maha jäänud inimeste jaoks
+	bussid=$( expr "$bussid" + "1" )
+fi
+
+echo "Kokku on vaja $bussid taisbussi"
