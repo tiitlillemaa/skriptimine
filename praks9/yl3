@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+#
+echo  -n "sisesta ridade arv: "
+read a				#sisestab  a ridade arvuna
+echo  -n "sisesta tärnide arv reas: "
+read b				#sisestab b märkide arvuna
+for (( i=1; i <= $a; i++)) # arvutab ridade arv
+do
+
+	for (( j=1; j<=$b; j++ )) # arvutab märkide arvu reas
+	do
+			# väljastab n arvu * vastavalt ridade ja märkide arvule
+	if [ $i  -eq 1 -o $i -eq $b ]; then
+	echo -n "*"
+	elif [ $j -eq  1 -o  $j -eq $b ]; then
+	echo -n "*"
+	else
+	echo -n " "
+	fi
+	done
+echo ""   #tühi rida
+done
