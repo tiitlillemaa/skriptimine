@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+#
+
+for (( i=1; i <= 5; i++)) # arvutab ridade arv
+do
+
+	for (( j = 1 ; j <= 5; j++)) # arvutab märkide arvu reas
+	do
+	
+	
+		echo -n "* "		# väljastab n arvu * vastavalt ridade ja märkide arvule
+	done
+
+
+echo ""   #tühi rida
+done
