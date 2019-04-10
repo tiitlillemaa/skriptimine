@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+#
+grupid="opilased, opetajad"
+while :
+do
+echo -n "Sisesta oma kasutajanimi"
+read user
+egrep "^$user" /etc/passwd >/dev/null
+if [ $? -eq 0 ]; then
+	echo -e "Selline kasutajanimi on juba olemas"
+	exit
+else
+echo -n "Vali nendest gruppidest üks ($grupid): "
+read grupp
+if grep -q $grupp /etc/group
+then
+	useradd -g $grupp -d /home/$user -m -s /bin/bash -m  $user
+	echo "$user:$parool" | chpasswd
+	echo -e "kasutaja $user on loodud"
+	echo -e "Parool on $user"
+	echo -e "Teie grupiks on $group"
+	echo -e "Teie kodukataloog on /home/$user"
+else
+	echo "valisid vale grupi"
+fi
+fi
+	echo "vajuta ctrl+c kui soovid lõpetada"
+done
